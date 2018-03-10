@@ -1,33 +1,29 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  telegram_webhooks:
+    start:
+      content: Great. Your data has been saved.
+      gender_question: "What's your gender?"
+      age_question: How old are you?
+      training_plan_question: Choose your training plan.
+    help:
+      content: |
+        *Available commands:*
+        /start - Registration
+        /help - Show help info
+        /trainings - Show trainings list by the selected training plan
+    trainings:
+      content: '*Trainings for you:*'
+      warning: "Please, choose your training plan. To do this, run the command /start"
+    callback_query:
+      content: |
+        *Training details*
+
+        *Name:* %{name}
+        *Start Time:* %{start_time}
+        *Description:* %{description}
+        *Completed:* %{completed}
+      complete: Mark as completed
+      completed: Training *%{name}* marked as completed.
+      action_not_supported: Action not supported
+    message:
+      content: 'You wrote: %{text}'
